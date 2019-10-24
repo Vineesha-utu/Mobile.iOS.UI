@@ -8,34 +8,21 @@
 
 import Foundation
 import UIKit
+
+let kSmall   =  13
+let kRegular =  16
+let kBig     =  20
+
 public class UTUButton: UIButton {
-    public static func getOutLinedButton(_ rect: CGRect, title : String, size: CGFloat) ->  UIButton{
-        // Drawing code
-        let button = UIButton(frame: rect)
-        button.layer.cornerRadius = 3.0
-        button.layer.borderWidth = 0.5
-        button.titleLabel?.font = UIFont(name: "HelveticaNeue", size: size)
-        button.setTitleColor(UIColor(red: 6.0/255.0, green: 179.0/255.0, blue: 152.0/255.0, alpha: 1), for: .normal)
-        button.layer.borderColor = UIColor(red: 6.0/255.0, green: 179.0/255.0, blue: 152.0/255.0, alpha: 1).cgColor //6,179,152
-        button.setTitle(title, for: .normal)
-        return button
+    public  override init(frame : CGRect) {
+        super.init(frame : frame)
     }
-    public static func getContainedButton(_ rect: CGRect, title : String,size: CGFloat) ->  UIButton{
-        let button = UIButton(frame: rect)
-        button.backgroundColor = UIColor(red: 6.0/255.0, green: 179.0/255.0, blue: 152.0/255.0, alpha: 1)
-        button.layer.cornerRadius = 3.0
-        button.layer.borderWidth = 0.5
-        button.titleLabel?.font = UIFont(name: "HelveticaNeue", size: size)
-        button.setTitleColor(.white, for: .normal)
-        button.layer.borderColor = UIColor(red: 6.0/255.0, green: 179.0/255.0, blue: 152.0/255.0, alpha: 1).cgColor //6,179,152
-        button.setTitle(title, for: .normal)
-        return button
+    public convenience  init(frame : CGRect, label : String, outlined : Bool, disabled : Bool, size : String ) {
+        self.init(frame: frame, label : label, outlined : outlined, disabled: disabled, size: size, isPress : true)
     }
-    public convenience override init(frame : CGRect) {
-        self.init(frame: frame, label : "Logic", outlined : true, disabled: false, size: "small")
-    }
-    required init(frame : CGRect, label: String, outlined: Bool, disabled: Bool, size: String) {
-        super.init(frame: frame)
+    
+    required convenience init(frame : CGRect, label: String, outlined: Bool, disabled: Bool, size: String, isPress : Bool) {
+        self.init(frame : frame)
         backgroundColor = UIColor(red: 6.0/255.0, green: 179.0/255.0, blue: 152.0/255.0, alpha: 1)
         setTitle(label, for: .normal)
         layer.cornerRadius = 3.0
@@ -47,14 +34,7 @@ public class UTUButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
     
 }
 
-/*UTUButton(
-    label: String,      | "Action" | text to display in the button
-    outlined: Boolean,  | false | if true display the button in outlined mode
-    disabled: Boolean,  | false | if true button appears in disabled state
-    pressed: Boolean,   | false | if true button appears in pressed state
-    size: String,       | "regular" | "small", "regular", "big" | choose a button size
-)*/
+
