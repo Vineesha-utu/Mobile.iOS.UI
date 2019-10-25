@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		180249CD235F1F36009E8262 /* UTUFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 180249CB235F1F36009E8262 /* UTUFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		180249D4235F1F6C009E8262 /* UTUButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180249D3235F1F6C009E8262 /* UTUButton.swift */; };
-		18C53A412362EEB9002515BA /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18C53A3D2362EEB9002515BA /* NotoSans-Regular.ttf */; };
-		18C53A422362EEB9002515BA /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18C53A3E2362EEB9002515BA /* NotoSans-Bold.ttf */; };
-		18C53A432362EEB9002515BA /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18C53A3F2362EEB9002515BA /* NotoSans-BoldItalic.ttf */; };
-		18C53A442362EEB9002515BA /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18C53A402362EEB9002515BA /* NotoSans-Italic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +16,6 @@
 		180249CB235F1F36009E8262 /* UTUFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UTUFramework.h; sourceTree = "<group>"; };
 		180249CC235F1F36009E8262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180249D3235F1F6C009E8262 /* UTUButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTUButton.swift; sourceTree = "<group>"; };
-		18C53A3D2362EEB9002515BA /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
-		18C53A3E2362EEB9002515BA /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
-		18C53A3F2362EEB9002515BA /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
-		18C53A402362EEB9002515BA /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,23 +48,11 @@
 		180249CA235F1F36009E8262 /* UTUFramework */ = {
 			isa = PBXGroup;
 			children = (
-				18C53A3C2362EEB9002515BA /* Noto_Sans */,
 				180249D3235F1F6C009E8262 /* UTUButton.swift */,
 				180249CB235F1F36009E8262 /* UTUFramework.h */,
 				180249CC235F1F36009E8262 /* Info.plist */,
 			);
 			path = UTUFramework;
-			sourceTree = "<group>";
-		};
-		18C53A3C2362EEB9002515BA /* Noto_Sans */ = {
-			isa = PBXGroup;
-			children = (
-				18C53A3D2362EEB9002515BA /* NotoSans-Regular.ttf */,
-				18C53A3E2362EEB9002515BA /* NotoSans-Bold.ttf */,
-				18C53A3F2362EEB9002515BA /* NotoSans-BoldItalic.ttf */,
-				18C53A402362EEB9002515BA /* NotoSans-Italic.ttf */,
-			);
-			path = Noto_Sans;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,10 +124,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C53A432362EEB9002515BA /* NotoSans-BoldItalic.ttf in Resources */,
-				18C53A422362EEB9002515BA /* NotoSans-Bold.ttf in Resources */,
-				18C53A412362EEB9002515BA /* NotoSans-Regular.ttf in Resources */,
-				18C53A442362EEB9002515BA /* NotoSans-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

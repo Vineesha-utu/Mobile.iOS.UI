@@ -104,7 +104,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  spec.resources = "UTUFramework/Noto_Sans/*.ttf" , "UTUFramework/Info.plist"
+  #spec.resources = "UTUFramework/Noto_Sans/*.ttf"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
