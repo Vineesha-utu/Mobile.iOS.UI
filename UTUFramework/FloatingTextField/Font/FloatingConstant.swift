@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 struct UTUFontNames {
     static let NotoSansBold = "NotoSans-Bold"
     static let NotoSansRegular = "NotoSans"

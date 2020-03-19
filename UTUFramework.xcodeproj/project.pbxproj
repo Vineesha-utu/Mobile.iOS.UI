@@ -26,8 +26,6 @@
 		C25F96E124222846007C5CF6 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C25F96DB24222846007C5CF6 /* NotoSans-Bold.ttf */; };
 		C25F96E224222846007C5CF6 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C25F96DC24222846007C5CF6 /* NotoSans-BoldItalic.ttf */; };
 		C25F96E324222846007C5CF6 /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C25F96DD24222846007C5CF6 /* NotoSans-Italic.ttf */; };
-		C25F96E424222846007C5CF6 /* settings.json in Resources */ = {isa = PBXBuildFile; fileRef = C25F96DE24222846007C5CF6 /* settings.json */; };
-		C25F96E524222846007C5CF6 /* ServiceConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = C25F96DF24222846007C5CF6 /* ServiceConfiguration.plist */; };
 		C25F96E724222869007C5CF6 /* FloatingConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25F96E624222869007C5CF6 /* FloatingConstant.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,8 +51,6 @@
 		C25F96DB24222846007C5CF6 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		C25F96DC24222846007C5CF6 /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		C25F96DD24222846007C5CF6 /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
-		C25F96DE24222846007C5CF6 /* settings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = settings.json; sourceTree = "<group>"; };
-		C25F96DF24222846007C5CF6 /* ServiceConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServiceConfiguration.plist; sourceTree = "<group>"; };
 		C25F96E624222869007C5CF6 /* FloatingConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingConstant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,8 +142,6 @@
 			children = (
 				C25F96E624222869007C5CF6 /* FloatingConstant.swift */,
 				C25F96D924222846007C5CF6 /* Noto_Sans */,
-				C25F96DF24222846007C5CF6 /* ServiceConfiguration.plist */,
-				C25F96DE24222846007C5CF6 /* settings.json */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -232,11 +226,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C25F96E424222846007C5CF6 /* settings.json in Resources */,
 				C25F96E224222846007C5CF6 /* NotoSans-BoldItalic.ttf in Resources */,
 				C25F967C24221491007C5CF6 /* cancel-24px@2x.png in Resources */,
 				C25F967B24221491007C5CF6 /* cancel-24px@3x.png in Resources */,
-				C25F96E524222846007C5CF6 /* ServiceConfiguration.plist in Resources */,
 				C25F96E024222846007C5CF6 /* NotoSans-Regular.ttf in Resources */,
 				C25F96E124222846007C5CF6 /* NotoSans-Bold.ttf in Resources */,
 				C25F967624221491007C5CF6 /* ic_eye_closed@2x.png in Resources */,
