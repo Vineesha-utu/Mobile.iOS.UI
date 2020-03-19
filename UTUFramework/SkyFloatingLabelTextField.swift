@@ -25,7 +25,7 @@ public enum ErrorMessagePlacement {
  A beautiful and flexible textfield implementation with support for title label, error message and placeholder.
  */
 @IBDesignable
-open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{
+public class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{
     
     let paddingEditing = UIEdgeInsets(top: 5, left: 16, bottom: 5, right: 50)
     var clearBtn : UIButton!
