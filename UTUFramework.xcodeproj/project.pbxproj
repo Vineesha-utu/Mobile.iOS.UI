@@ -85,7 +85,11 @@
 				180249D3235F1F6C009E8262 /* UTUButton.swift */,
 				180249CB235F1F36009E8262 /* UTUFramework.h */,
 				C25F96E624222869007C5CF6 /* FloatingConstant.swift */,
-				C25F966F24221491007C5CF6 /* SKYFloatingLabelTextfield */,
+				C25F967024221491007C5CF6 /* SkyFloatingLabelTextField.swift */,
+				C25F967124221491007C5CF6 /* UITextField+fixCaretPosition.swift */,
+				C25F967324221491007C5CF6 /* Font */,
+				C25F966524221491007C5CF6 /* Resources */,
+				C25F966324221491007C5CF6 /* Extension */,
 				180249CC235F1F36009E8262 /* Info.plist */,
 			);
 			path = UTUFramework;
@@ -115,24 +119,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		C25F966F24221491007C5CF6 /* SKYFloatingLabelTextfield */ = {
-			isa = PBXGroup;
-			children = (
-				C25F967024221491007C5CF6 /* SkyFloatingLabelTextField.swift */,
-				C25F967124221491007C5CF6 /* UITextField+fixCaretPosition.swift */,
-				C25F966324221491007C5CF6 /* Extension */,
-				C25F966524221491007C5CF6 /* Resources */,
-				C25F967324221491007C5CF6 /* Font */,
-			);
-			path = SKYFloatingLabelTextfield;
-			sourceTree = "<group>";
-		};
 		C25F967324221491007C5CF6 /* Font */ = {
 			isa = PBXGroup;
 			children = (
 				C25F96D924222846007C5CF6 /* Noto_Sans */,
 			);
-			path = Font;
+			name = Font;
+			path = SKYFloatingLabelTextfield/Font;
 			sourceTree = "<group>";
 		};
 		C25F96D924222846007C5CF6 /* Noto_Sans */ = {
