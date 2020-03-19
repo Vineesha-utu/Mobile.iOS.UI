@@ -21,7 +21,6 @@
 		C25F967D24221491007C5CF6 /* ic_eye_open@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C25F966E24221491007C5CF6 /* ic_eye_open@3x.png */; };
 		C25F967E24221491007C5CF6 /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25F967024221491007C5CF6 /* SkyFloatingLabelTextField.swift */; };
 		C25F967F24221491007C5CF6 /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25F967124221491007C5CF6 /* UITextField+fixCaretPosition.swift */; };
-		C25F968024221491007C5CF6 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25F967224221491007C5CF6 /* SkyFloatingLabelTextFieldWithIcon.swift */; };
 		C25F96E024222846007C5CF6 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C25F96DA24222846007C5CF6 /* NotoSans-Regular.ttf */; };
 		C25F96E124222846007C5CF6 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C25F96DB24222846007C5CF6 /* NotoSans-Bold.ttf */; };
 		C25F96E224222846007C5CF6 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C25F96DC24222846007C5CF6 /* NotoSans-BoldItalic.ttf */; };
@@ -46,7 +45,6 @@
 		C25F966E24221491007C5CF6 /* ic_eye_open@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_eye_open@3x.png"; sourceTree = "<group>"; };
 		C25F967024221491007C5CF6 /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
 		C25F967124221491007C5CF6 /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
-		C25F967224221491007C5CF6 /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
 		C25F96DA24222846007C5CF6 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		C25F96DB24222846007C5CF6 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		C25F96DC24222846007C5CF6 /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -84,23 +82,13 @@
 		180249CA235F1F36009E8262 /* UTUFramework */ = {
 			isa = PBXGroup;
 			children = (
-				C25F966224221491007C5CF6 /* FloatingTextField */,
 				180249D3235F1F6C009E8262 /* UTUButton.swift */,
 				180249CB235F1F36009E8262 /* UTUFramework.h */,
+				C25F96E624222869007C5CF6 /* FloatingConstant.swift */,
+				C25F966F24221491007C5CF6 /* SKYFloatingLabelTextfield */,
 				180249CC235F1F36009E8262 /* Info.plist */,
 			);
 			path = UTUFramework;
-			sourceTree = "<group>";
-		};
-		C25F966224221491007C5CF6 /* FloatingTextField */ = {
-			isa = PBXGroup;
-			children = (
-				C25F966324221491007C5CF6 /* Extension */,
-				C25F966524221491007C5CF6 /* Resources */,
-				C25F966F24221491007C5CF6 /* SKYFloatingLabelTextfield */,
-				C25F967324221491007C5CF6 /* Font */,
-			);
-			path = FloatingTextField;
 			sourceTree = "<group>";
 		};
 		C25F966324221491007C5CF6 /* Extension */ = {
@@ -132,7 +120,9 @@
 			children = (
 				C25F967024221491007C5CF6 /* SkyFloatingLabelTextField.swift */,
 				C25F967124221491007C5CF6 /* UITextField+fixCaretPosition.swift */,
-				C25F967224221491007C5CF6 /* SkyFloatingLabelTextFieldWithIcon.swift */,
+				C25F966324221491007C5CF6 /* Extension */,
+				C25F966524221491007C5CF6 /* Resources */,
+				C25F967324221491007C5CF6 /* Font */,
 			);
 			path = SKYFloatingLabelTextfield;
 			sourceTree = "<group>";
@@ -140,7 +130,6 @@
 		C25F967324221491007C5CF6 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				C25F96E624222869007C5CF6 /* FloatingConstant.swift */,
 				C25F96D924222846007C5CF6 /* Noto_Sans */,
 			);
 			path = Font;
@@ -250,7 +239,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C25F967E24221491007C5CF6 /* SkyFloatingLabelTextField.swift in Sources */,
-				C25F968024221491007C5CF6 /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				180249D4235F1F6C009E8262 /* UTUButton.swift in Sources */,
 				C25F967F24221491007C5CF6 /* UITextField+fixCaretPosition.swift in Sources */,
 				C25F967424221491007C5CF6 /* FontSize.swift in Sources */,
