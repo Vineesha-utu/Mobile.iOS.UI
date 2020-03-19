@@ -82,16 +82,41 @@
 		180249CA235F1F36009E8262 /* UTUFramework */ = {
 			isa = PBXGroup;
 			children = (
+				180249CB235F1F36009E8262 /* UTUFramework.h */,
+				C26794412423BECD000AE807 /* UTUButton */,
+				C26794402423BEBB000AE807 /* Resources */,
+				C267943F2423BE87000AE807 /* FloatingtextField */,
+				C267943E2423BE63000AE807 /* NotoSansFonts */,
+				180249CC235F1F36009E8262 /* Info.plist */,
+			);
+			path = UTUFramework;
+			sourceTree = "<group>";
+		};
+		C267943E2423BE63000AE807 /* NotoSansFonts */ = {
+			isa = PBXGroup;
+			children = (
 				C25F96DA24222846007C5CF6 /* NotoSans-Regular.ttf */,
 				C25F96DB24222846007C5CF6 /* NotoSans-Bold.ttf */,
 				C25F96DC24222846007C5CF6 /* NotoSans-BoldItalic.ttf */,
 				C25F96DD24222846007C5CF6 /* NotoSans-Italic.ttf */,
-				180249D3235F1F6C009E8262 /* UTUButton.swift */,
-				180249CB235F1F36009E8262 /* UTUFramework.h */,
+			);
+			path = NotoSansFonts;
+			sourceTree = "<group>";
+		};
+		C267943F2423BE87000AE807 /* FloatingtextField */ = {
+			isa = PBXGroup;
+			children = (
 				C25F96E624222869007C5CF6 /* FloatingConstant.swift */,
 				C25F967024221491007C5CF6 /* SkyFloatingLabelTextField.swift */,
 				C25F967124221491007C5CF6 /* UITextField+fixCaretPosition.swift */,
 				C25F966424221491007C5CF6 /* FontSize.swift */,
+			);
+			path = FloatingtextField;
+			sourceTree = "<group>";
+		};
+		C26794402423BEBB000AE807 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				C25F966624221491007C5CF6 /* ic_eye_closed.png */,
 				C25F966724221491007C5CF6 /* ic_eye_closed@2x.png */,
 				C25F966824221491007C5CF6 /* cancel-24px.png */,
@@ -101,9 +126,16 @@
 				C25F966C24221491007C5CF6 /* cancel-24px@3x.png */,
 				C25F966D24221491007C5CF6 /* cancel-24px@2x.png */,
 				C25F966E24221491007C5CF6 /* ic_eye_open@3x.png */,
-				180249CC235F1F36009E8262 /* Info.plist */,
 			);
-			path = UTUFramework;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C26794412423BECD000AE807 /* UTUButton */ = {
+			isa = PBXGroup;
+			children = (
+				180249D3235F1F6C009E8262 /* UTUButton.swift */,
+			);
+			path = UTUButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
