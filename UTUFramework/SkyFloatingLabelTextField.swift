@@ -25,7 +25,7 @@ public enum ErrorMessagePlacement {
  A beautiful and flexible textfield implementation with support for title label, error message and placeholder.
  */
 @IBDesignable
-open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swiftlint:disable:this type_body_length
+open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{
     
     let paddingEditing = UIEdgeInsets(top: 5, left: 16, bottom: 5, right: 50)
     var clearBtn : UIButton!
@@ -34,7 +34,7 @@ open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swif
     let maskLayer = CAShapeLayer()
     let borderLayer = CAShapeLayer()
     var path = UIBezierPath()
-    var isCancelhidden = false
+    public var isCancelhidden = false
     /**
      A Boolean value that determines if the language displayed is LTR.
      Default value set automatically from the application language settings.
