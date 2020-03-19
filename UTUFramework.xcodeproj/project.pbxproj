@@ -83,7 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				180249CB235F1F36009E8262 /* UTUFramework.h */,
-				C26794412423BECD000AE807 /* UTUButton */,
+				180249D3235F1F6C009E8262 /* UTUButton.swift */,
+				C25F967024221491007C5CF6 /* SkyFloatingLabelTextField.swift */,
 				C26794402423BEBB000AE807 /* Resources */,
 				C267943F2423BE87000AE807 /* FloatingtextField */,
 				C267943E2423BE63000AE807 /* NotoSansFonts */,
@@ -107,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				C25F96E624222869007C5CF6 /* FloatingConstant.swift */,
-				C25F967024221491007C5CF6 /* SkyFloatingLabelTextField.swift */,
 				C25F967124221491007C5CF6 /* UITextField+fixCaretPosition.swift */,
 				C25F966424221491007C5CF6 /* FontSize.swift */,
 			);
@@ -128,14 +128,6 @@
 				C25F966E24221491007C5CF6 /* ic_eye_open@3x.png */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		C26794412423BECD000AE807 /* UTUButton */ = {
-			isa = PBXGroup;
-			children = (
-				180249D3235F1F6C009E8262 /* UTUButton.swift */,
-			);
-			path = UTUButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
