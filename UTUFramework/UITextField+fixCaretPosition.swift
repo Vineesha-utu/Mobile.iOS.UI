@@ -12,6 +12,7 @@
 // MARK: - UITextField extension
 
 import UIKit
+import Foundation
 
 extension UITextField {
     /// Moves the caret to the correct position by removing the trailing whitespace

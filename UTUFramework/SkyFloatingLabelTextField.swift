@@ -10,7 +10,7 @@
 //  for the specific language governing permissions and limitations under the License.
 
 import UIKit
-
+import Foundation
 /**
  An enum for the possible error label placements.
  .default is the standard (on top) position; the error message is displayed in the `titleLabel`.
