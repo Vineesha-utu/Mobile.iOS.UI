@@ -89,7 +89,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "UTUFramework", "UTUFramework/*.{swift}"
+  spec.source_files  = "UTUFramework", "Classes/**/*.{swift}"
   spec.exclude_files = "UTUFramework/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -104,7 +104,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  #spec.resources = "UTUFramework/Noto_Sans/*.ttf"
+  spec.resources = "Resources/**/*.{png,xib,json,plist,ttf,xcassets,sqlite,bundle,js}"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
