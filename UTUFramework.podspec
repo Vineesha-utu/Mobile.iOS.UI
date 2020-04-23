@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "UTUFramework"
-  spec.version      = "0.0.1"
+  spec.version      = "1.0.0"
   spec.summary      = "A short description of UTUButton."
 
   # This description is used to generate tags and improve search results.
@@ -89,7 +89,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "UTUFramework", "UTUFramework/**/*.{h,m}"
+  spec.source_files  = "UTUFramework", "UTUFramework/*.{swift}"
   spec.exclude_files = "UTUFramework/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -132,6 +132,6 @@ Pod::Spec.new do |spec|
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
-spec.swift_version = "5" 
+  spec.swift_version = "5" 
 
 end
