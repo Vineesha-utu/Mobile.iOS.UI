@@ -12,6 +12,7 @@ protocol UTUAlertViewDelegate: class {
     func okButtonTapped()
     func cancelButtonTapped()
 }
+
 class UTUAlertController: UIViewController {
     @IBOutlet weak var messageToTop: NSLayoutConstraint!
     @IBOutlet weak var titleLbl: UILabel!
@@ -30,6 +31,14 @@ class UTUAlertController: UIViewController {
     var descHeight = 85
     let alertViewGrayColor = UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1)
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -57,7 +66,7 @@ class UTUAlertController: UIViewController {
         }
         if let message = messageStr {
             self.messageLbl.text = message
-            let messageHeight = Utility.heightForView(text: message, font: UIFont(name: UTUFontNames.NotoSansRegular, size: 14)!, width: screenSize.width - 82)
+            let messageHeight = self.heightForView(text: message, font: UIFont(name: UTUFontNames.NotoSansRegular, size: 14)!, width: screenSize.width - 82)
             self.alertViewHeight.constant = messageHeight + 150 //184
             self.messageHeight.constant = CGFloat(descHeight) //85  //61
         }
@@ -68,6 +77,16 @@ class UTUAlertController: UIViewController {
         if let cancel = cancelStr {
             self.cancelBtn.setTitle(cancel, for: .normal)
         }
+    }
+    
+    func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat {
+        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.font = font
+        label.text = text
+        label.sizeToFit()
+        return label.frame.height
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -81,8 +100,8 @@ class UTUAlertController: UIViewController {
         okBtn.layer.cornerRadius = 5
         cancelBtn.layer.borderColor = tintColor.cgColor
         okBtn.layer.borderColor = tintColor.cgColor
-        cancelBtn.layer.maskedCorners = [.layerMinXMaxYCorner]
-        okBtn.layer.maskedCorners = [.layerMaxXMaxYCorner]
+       // cancelBtn.layer.maskedCorners = [.layerMinXMaxYCorner]
+        //okBtn.layer.maskedCorners = [.layerMaxXMaxYCorner]
 
        // cancelBtn.addBorder(side: .Top, color: alertViewGrayColor, width: 1)
        // cancelBtn.addBorder(side: .Right, color: alertViewGrayColor, width: 1)
