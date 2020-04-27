@@ -104,7 +104,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  spec.resources = "UTUFramework/Resources/**/*.{png,xib,json,plist,ttf,xcassets,sqlite,bundle,js}"
+  spec.resources = "UTUFramework/Resources/*.{png,xib,json,plist,ttf,xcassets,sqlite,bundle,js}"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
