@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "UTUFramework"
-  spec.bundle_identifier = "com.utu.utuframework"
+  spec.pod_target_xcconfig = {'PRODUCT_BUNDLE_IDENTIFIER': 'com.utu.utuframework'}
   spec.version      = "1.0.0"
   spec.summary      = "A short description of UTUButton."
 
