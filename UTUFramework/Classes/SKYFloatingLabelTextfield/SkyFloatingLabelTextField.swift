@@ -25,7 +25,7 @@ public enum ErrorMessagePlacement {
  A beautiful and flexible textfield implementation with support for title label, error message and placeholder.
  */
 @IBDesignable
-open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swiftlint:disable:this type_body_length
+public class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swiftlint:disable:this type_body_length
     
     let paddingEditing = UIEdgeInsets(top: 5, left: 16, bottom: 5, right: 50)
     var clearBtn : UIButton!
@@ -129,7 +129,7 @@ open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swif
     }
     
     /// A UIFont value that determines the text font of the title label
-    @objc dynamic open var titleFont: UIFont = UIFont(name: UTUFontNames.NotoSansRegular, size: 13)!{
+    @objc dynamic open var titleFont: UIFont = UIFont(name: UTUFontNames.NotoSansRegular, size: 13) ?? .systemFont(ofSize : 13){
         didSet {
             updateTitleLabel()
         }
@@ -675,7 +675,9 @@ open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swif
                                                width: 24,
                                                height: 24)
                 self.clearBtn.frame = btnFrame
-                self.clearBtn.setImage(UIImage(named: "cancel-24px"), for: .normal)
+                
+                let image = UIImage(named: "cancel-24px", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)
+                self.clearBtn.setImage(image, for: .normal)
                 self.clearBtn.imageView?.contentMode = .scaleToFill
                 self.clearBtn.addTarget(self, action: #selector(self.clearBtnClicked(sender:)), for: .touchUpInside)
                 self.bringSubviewToFront(self.clearBtn)
