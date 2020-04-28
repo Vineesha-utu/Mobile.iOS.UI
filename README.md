@@ -1,4 +1,4 @@
-<h1 align="center">TaxFree iOS UI Components</h1>
+<h1 align="center">Tax free iOS UI Components</h1>
 
 <p align="center">
   
@@ -7,12 +7,12 @@
   
   <a href="https://cocoapods.org" > <img src="https://raw.githubusercontent.com/CocoaPods/shared_resources/master/assets/cocoapods-banner-readme.png" width=250 height=30/></a>
 
-A component library that can use the custom views for all Tax Free related applications
+A component library that can use the custom views for all Tax free related applications
 </p>
 
 ## What this framework contains
 
-1. Custom Tax-free Text Field.
+1. Custom Text Field.
 2. Custom AlertView.
 3. Custom SnackBar (from Material components).
 4. Custom ActionSheet.
@@ -66,8 +66,91 @@ For the password or secreted text fields need to add couple of line (by default 
 
 ```
 
-## Adding Custom AlertView
+## 2. Adding Custom AlertView
 
+As usual import UTUFramework, the following sample function UTUAlertView.
 
+The Viewcontroller conforms to protocol UTUAlertViewDelegate.
+
+```
+class ViewController : UIViewController,UTUAlertViewDelegate {
+              .
+              .
+              .
+
+func showAlert(){
+        
+        let customAlert = UTUAlertController(nibName: "UTUAlertController", bundle:  Bundle(identifier: "com.utu.utuframework"))
+        customAlert.providesPresentationContextTransitionStyle = true
+        customAlert.definesPresentationContext = true
+        customAlert.okStr = "Confirm"
+        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        customAlert.delegate = self
+        self.present(customAlert, animated: true, completion: nil)
+    }
+    
+    
+              .
+              .
+              .
+     //Alert delegate methods
+    func okButtonTapped() {
+        print("Ok Clicked")
+    }
+     //Alert delegate methods
+    func cancelButtonTapped() {
+        print("Canel Clicked")
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+}
+```
+## 3. Adding Custom SnackBar
+
+```
+func showSnackBar(){
+        SnackBarUtility.sharedInstance.showSnackbar(title:  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.")
+    }
+
+```
+
+## 4. Adding Custom ActionSheet
+
+The Viewcontroller conforms to protocol PickerSelectionDelegate.
+
+```
+class ViewController : UIViewController,PickerSelectionDelegate {
+              .
+              .
+              .
+
+  func showActionSheet(){
+        let vc = UTUActionSheetVC(nibName: "UTUActionSheetVC", bundle: Bundle(identifier: "com.utu.utuframework"))
+        let customVC = CustomModalPresentViewController.init(rootViewController: vc)
+        customVC?.partScreenPresentYPos = Float(UIScreen.main.bounds.size.height - 197)
+        vc.delegateObj = self
+        self.present(customVC!, animated: true, completion: nil)
+    }
+    
+    
+    
+              .
+              .
+              .
+    //Picker delegate method
+    func getPickerValue(index: Int) {
+        if index == 0 {
+            print("Index 0 selected")
+        }else {
+            print("Index 1 selected")
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+}
+              
+
+```
 
 
