@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, MZCustomModalPresentViewControllerPresentationStyle) 
 };
 
 
-@public @interface CustomModalPresentViewController : UIViewController
+@interface CustomModalPresentViewController : UIViewController
 
 /**
  The animation duration
