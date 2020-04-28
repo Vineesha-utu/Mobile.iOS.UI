@@ -7,7 +7,7 @@
   
   <a href="https://cocoapods.org" > <img src="https://raw.githubusercontent.com/CocoaPods/shared_resources/master/assets/cocoapods-banner-readme.png" width=250 height=30/></a>
 
-A component library that can use the custom views for all Tax free related applications
+Custom components library for all Tax free applications.
 </p>
 
 ## What this framework contains
@@ -38,7 +38,7 @@ Step 3 : Add the header file in bridge-header.h (This is required step, to make 
 
 ## 1. Adding Custom TextField 
 
-In XIB or StoryBoard , drag and drop the UITextField as usual. But need to change the class as "SkyFloatingLabelTextField" and the module to UTUFramework as below
+In XIB or StoryBoard , drag and drop the UITextField as usual. But need to change the class as "SkyFloatingLabelTextField" and the module to "UTUFramework" as below
 
 <img src= "https://user-images.githubusercontent.com/62499361/80496873-623d5b80-8987-11ea-9a20-4521d630c615.png" width="250" height="150" />
 
@@ -70,7 +70,7 @@ For the password or secreted text fields need to add couple of line (by default 
 
 As usual import UTUFramework, the following sample function UTUAlertView.
 
-The Viewcontroller conforms to protocol UTUAlertViewDelegate.
+The Viewcontroller should conform to protocol UTUAlertViewDelegate.
 
 ```
 class ViewController : UIViewController,UTUAlertViewDelegate {
@@ -117,7 +117,7 @@ func showSnackBar(){
 
 ## 4. Adding Custom ActionSheet
 
-The Viewcontroller conforms to protocol PickerSelectionDelegate.
+The Viewcontroller should conforms to protocol PickerSelectionDelegate.
 
 ```
 class ViewController : UIViewController,PickerSelectionDelegate {
