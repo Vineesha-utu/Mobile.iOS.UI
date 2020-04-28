@@ -16,6 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "UTUFramework"
+  spec.bundle_identifier = "com.utu.utuframework"
   spec.version      = "1.0.0"
   spec.summary      = "A short description of UTUButton."
 
@@ -104,7 +105,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  spec.resources = "UTUFramework/Resources/*.{png,xib,json,plist,ttf,xcassets,sqlite,bundle,js}"
+  spec.resources = "UTUFramework/Resources/**/*.{png,xib,json,plist,ttf,xcassets,sqlite,bundle,js}"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
