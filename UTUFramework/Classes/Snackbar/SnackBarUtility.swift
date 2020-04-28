@@ -24,16 +24,16 @@ public class SnackBarUtility : NSObject, MDCSnackbarManagerDelegate {
     var defaultManager : MDCSnackbarManager!
     var snackbarTitleLbl : UILabel!
     //Singleton Implementation
-    static let sharedInstance:SnackBarUtility = {
+    static public let sharedInstance:SnackBarUtility = {
         let instance = SnackBarUtility ()
         return instance
     } ()
 
-    func showSnackbar(title: String){
+    public func showSnackbar(title: String){
         self.showSnackbar(title: title, forSuccess: false)
     }
     
-    func showSnackbar(title: String, forSuccess : Bool){
+     func showSnackbar(title: String, forSuccess : Bool){
         //let snackbarMessage = MDCSnackbarMessage()
         //let action = MDCSnackbarMessageAction()
         

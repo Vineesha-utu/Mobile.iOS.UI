@@ -24,7 +24,7 @@ public enum IconType: Int {
 /**
  A beautiful and flexible textfield implementation with support for icon, title label, error message and placeholder.
  */
-open class SkyFloatingLabelTextFieldWithIcon: SkyFloatingLabelTextField {
+public class SkyFloatingLabelTextFieldWithIcon: SkyFloatingLabelTextField {
 
     @IBInspectable
     var iconTypeValue: Int {
