@@ -77,8 +77,8 @@ public class UTUSnackBar : NSObject, MDCSnackbarManagerDelegate {
         customMessageView.layer.borderColor = UTUColors.white213.cgColor
         customMessageView.backgroundColor = UTUColors.white245
         statusButton = UIButton(frame: CGRect(x: 8, y: 11, width: 24, height: 25))
-        let checkCircleImg = UIImage(named: "check_circle", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)
-        let infoImg = UIImage(named: "info", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)
+        let checkCircleImg = UIImage(named: "check_circle.png", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)
+        let infoImg = UIImage(named: "info.pdf", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)
         if self.isSuccess {
             statusButton.setBackgroundImage(checkCircleImg, for: .normal)
         }else{
@@ -136,7 +136,7 @@ public class UTUSnackBar : NSObject, MDCSnackbarManagerDelegate {
         moreButton = UIButton(frame: CGRect(x: customMessageView.frame.width - 30, y: (customMessageView.frame.height/2) - 12, width: 24, height: 25))
         moreButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
         
-        let closeImage = UIImage(named: "cancel-24px", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)
+        let closeImage = UIImage(named: "cancel-24px.png", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)
         moreButton.setImage(closeImage, for: .normal)
         moreButton.isUserInteractionEnabled = false
         customMessageView.addSubview(moreButton)
