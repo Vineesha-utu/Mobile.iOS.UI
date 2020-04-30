@@ -79,14 +79,17 @@ class ViewController : UIViewController,UTUAlertViewDelegate {
               .
 
 func showAlert(){
-        
-        let customAlert = UTUAlertController(nibName: "UTUAlertController", bundle:  Bundle(identifier: "com.utu.utuframework"))
+        let customAlert = UTUAlertController(nibName: "UTUAlertController", bundle: Bundle(identifier: "com.utu.utuframework"))
         customAlert.providesPresentationContextTransitionStyle = true
         customAlert.definesPresentationContext = true
-        customAlert.okStr = "Confirm"
         customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         customAlert.delegate = self
+        customAlert.tintColor = .red
+        customAlert.titleStr =  "Are you sure you want to delete it ?"
+        //customAlert.messageStr = "if you want to show the message you can use this property"
+        customAlert.okStr = "OK"
+        customAlert.cancelStr = "Cancel"
         self.present(customAlert, animated: true, completion: nil)
     }
     
@@ -101,7 +104,6 @@ func showAlert(){
      //Alert delegate methods
     func cancelButtonTapped() {
         print("Canel Clicked")
-        self.dismiss(animated: true, completion: nil)
     }
     
 }
