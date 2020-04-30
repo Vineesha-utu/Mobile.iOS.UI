@@ -104,6 +104,7 @@ func showAlert(){
      //Alert delegate methods
     func cancelButtonTapped() {
         print("Canel Clicked")
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
