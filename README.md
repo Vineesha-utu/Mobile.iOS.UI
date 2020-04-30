@@ -66,6 +66,21 @@ For the password or secreted text fields need to add couple of line (by default 
 
 ```
 
+To have hide/unhide functionality we need to add the rightView for the textfield.
+
+```
+ self.passwordTxtfld.rightViewMode = .always
+        passwordMaskBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        
+        let image = UIImage(named: "ic_eye_open", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)
+        passwordMaskBtn.setImage(image, for: .normal)
+        passwordMaskBtn.addTarget(self, action: #selector(showPasswordAction), for: .touchUpInside)
+        self.passwordTxtfld.rightView = passwordMaskBtn
+
+```
+
+Similarly we can also leftView to textfield.
+
 ## 2. Adding Custom AlertView
 
 As usual import UTUFramework, the following sample function UTUAlertView.
