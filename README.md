@@ -23,7 +23,7 @@ Step 1 : Generate a Podfile and add the following line,
 
     pod "UTUFramework", :git => 'https://github.com/UTU-Global/Mobile.iOS.UI', :branch => 'common_pod'
 
-Note : As the pod already uses MaterialComponents pods. Please comment the those line if already using in  your Podfile.
+Note : As the pod already uses MaterialComponents pods. Please comment the line if already using in  your Podfile.
 
 
 
@@ -69,7 +69,12 @@ For the password or secreted text fields need to add couple of line (by default 
 To have hide/unhide functionality we need to add the rightView for the textfield.
 
 ```
- self.passwordTxtfld.rightViewMode = .always
+        var passwordMaskBtn : UIButton!
+                    
+                    .
+                    .
+        
+        self.passwordTxtfld.rightViewMode = .always
         passwordMaskBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         
         let image = UIImage(named: "ic_eye_open", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)
