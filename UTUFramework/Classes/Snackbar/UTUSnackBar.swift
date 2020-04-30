@@ -18,7 +18,6 @@ public class UTUSnackBar : NSObject, MDCSnackbarManagerDelegate {
     static let messageAction = MDCSnackbarMessageAction()
     static let snackbarMessage = MDCSnackbarMessage()
     
-    //static var snackbarMessage : MDCSnackbarMessage! // UTUSnackbarMessage() //
     static var snackbarTitleLblHeight : CGFloat!
     static var defaultManager : MDCSnackbarManager!
     var snackbarTitleLbl : UILabel!
@@ -35,7 +34,6 @@ public class UTUSnackBar : NSObject, MDCSnackbarManagerDelegate {
         let actionHandler = {() in
             //todo
             MDCSnackbarManager.dismissAndCallCompletionBlocks(withCategory: "infinite")
-            
         }
         messageAction.handler = actionHandler
         snackbarMessage.action = messageAction
@@ -79,11 +77,10 @@ public class UTUSnackBar : NSObject, MDCSnackbarManagerDelegate {
         statusButton = UIButton(frame: CGRect(x: 8, y: 11, width: 24, height: 25))
         let tickImg = UIImage(named: "check_circle", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)
         let infoImg = UIImage(named: "info", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)
-
         if UTUSnackBar.isSuccess {
             statusButton.setBackgroundImage(tickImg, for: .normal)
         }else{
-            statusButton.setBackgroundImage(tickImg, for: .normal)//info
+            statusButton.setBackgroundImage(infoImg, for: .normal)//info
         }
         customMessageView.addSubview(statusButton)
         
@@ -155,4 +152,31 @@ public class UTUSnackBar : NSObject, MDCSnackbarManagerDelegate {
         return bottom > 0
     }
     
+}
+class UTUSnackbarMessage: MDCSnackbarMessage {
+    override init() {
+        super.init()
+    }
+    init(text: String) {
+        super.init()
+        self.text = text
+    }
+    
+    public var isNeedToDismiss = false
+    
+    public var customDuration: TimeInterval = 9999999
+    override var duration: TimeInterval {
+        get {
+            return isNeedToDismiss ? 3 : customDuration
+        }
+        set { }
+    }
+    
+    public var customCategory: String? = "infinite"
+    override var category: String? {
+        get {
+            return customCategory
+        }
+        set { }
+    }
 }

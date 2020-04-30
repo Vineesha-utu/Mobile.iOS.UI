@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol UTUAlertViewDelegate: class {
+public protocol UTUAlertViewDelegate: class {
     func okButtonTapped()
     func cancelButtonTapped()
 }
-class UTUAlertController: UIViewController {
+public class UTUAlertController: UIViewController {
     @IBOutlet weak var messageToTop: NSLayoutConstraint!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var messageLbl: UILabel!
@@ -21,16 +21,16 @@ class UTUAlertController: UIViewController {
     @IBOutlet weak var okBtn: UIButton!
     @IBOutlet weak var alertView: UIView!
     @IBOutlet weak var alertViewHeight: NSLayoutConstraint!
-    var tintColor = UIColor(red: 0/255, green: 179/255, blue: 152/255, alpha: 1)
-    var delegate: UTUAlertViewDelegate?
-    var titleStr : String?
-    var messageStr : String?
-    var okStr : String?
-    var cancelStr : String?
-    var descHeight = 85
+    public var tintColor = UIColor(red: 0/255, green: 179/255, blue: 152/255, alpha: 1)
+    public var delegate: UTUAlertViewDelegate?
+    public var titleStr : String?
+    public var messageStr : String?
+    public var okStr : String?
+    public var cancelStr : String?
+    public var descHeight = 85
     let alertViewGrayColor = UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1)
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         okBtn.layer.cornerRadius = 3.0
         okBtn.layer.borderWidth = 1.0
@@ -70,12 +70,12 @@ class UTUAlertController: UIViewController {
         label.sizeToFit()
         return label.frame.height
     }
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupView()
         animateView()
     }
-    override func viewDidLayoutSubviews() {
+    override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         view.layoutIfNeeded()
         cancelBtn.layer.cornerRadius = 5
