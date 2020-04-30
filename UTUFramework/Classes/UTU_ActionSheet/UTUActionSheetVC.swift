@@ -8,7 +8,7 @@
 
 import UIKit
 public protocol PickerSelectionDelegate {
-    func getPickerValue(index:Int)
+    func getPickerValue(title:String,index:Int)
 }
 public class UTUActionSheetVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     public var delegateObj : PickerSelectionDelegate!
@@ -23,7 +23,6 @@ public class UTUActionSheetVC: UIViewController,UITableViewDelegate, UITableView
     }
     
     override public func viewDidLoad() {
-        //items = [["title":"Take photo","image":"photoCamera"],["title":"Take photo","image":"photoCamera"]]
         super.viewDidLoad()
     }
     override public func viewWillAppear(_ animated: Bool) {
@@ -36,10 +35,14 @@ public class UTUActionSheetVC: UIViewController,UITableViewDelegate, UITableView
         self.dismiss(animated: true, completion: nil)
     }
     @objc func doneAction(){
-        delegateObj!.getPickerValue(index: 0)
+        let dict = items[0]
+        delegateObj!.getPickerValue(title: "\(dict["title"] ?? "")", index: 0)
         self.dismiss(animated: true, completion: nil)
     }
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if items == nil {
+            return 0
+        }
         return items.count
     }
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -54,6 +57,9 @@ public class UTUActionSheetVC: UIViewController,UITableViewDelegate, UITableView
         return cell
     }
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegateObj!.getPickerValue(index: indexPath.row)
+        let dict = items[indexPath.row]
+        self.dismiss(animated: true, completion: {
+            self.delegateObj!.getPickerValue(title:"\(dict["title"] ?? "")", index: indexPath.row)
+        })
     }
 }
