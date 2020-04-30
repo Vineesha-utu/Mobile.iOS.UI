@@ -51,7 +51,7 @@ public class UTUAlertController: UIViewController {
             self.messageLbl.text = message
             let messageHeight = heightForView(text: message, font: UIFont(name: "NotoSans", size: 14)!, width: UIScreen.main.bounds.width - 82)
             self.alertViewHeight.constant = messageHeight + 150
-            self.messageHeight.constant = CGFloat(descHeight)
+            self.messageHeight.constant = CGFloat(messageHeight)
         }
 
         if let ok = okStr {
@@ -120,4 +120,5 @@ public class UTUAlertController: UIViewController {
         delegate?.okButtonTapped()
         //self.dismiss(animated: true, completion: nil)
     }
+ 
 }
