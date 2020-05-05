@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import UTUFramework
+
 public protocol PickerSelectionDelegate {
     func getPickerValue(title:String,index:Int)
 }
 public class UTUActionSheetVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
     public var delegateObj : PickerSelectionDelegate!
     public var items : Array<Dictionary<String,String>>!
-    
+    public var titleStr : String!
+    @IBOutlet weak var titleLbl: UILabel!
+
     override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -24,6 +28,9 @@ public class UTUActionSheetVC: UIViewController,UITableViewDelegate, UITableView
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        if titleStr != nil {
+            self.titleLbl.text = titleStr
+        }
     }
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
