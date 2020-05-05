@@ -38,9 +38,9 @@ Step 3 : Add the header file in bridge-header.h (This is required step, to make 
 
 ## 1. Adding Custom TextField 
 
-In XIB or StoryBoard , drag and drop the UITextField as usual. But need to change the class as "SkyFloatingLabelTextField" and the module to "UTUFramework" as below
+In XIB or StoryBoard , drag and drop the UITextField as usual. But need to change the class as "UTUTextField" and the module to "UTUFramework" as below
 
-<img src= "https://user-images.githubusercontent.com/62499361/80496873-623d5b80-8987-11ea-9a20-4521d630c615.png" width="250" height="150" />
+<img src= "https://user-images.githubusercontent.com/62499361/81048230-8e059780-8ed9-11ea-8cdd-cd611019cea1.png" width="300" height="150" />
 
 
 In the respective ViewController
