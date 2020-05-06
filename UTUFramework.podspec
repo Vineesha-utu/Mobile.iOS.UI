@@ -16,7 +16,8 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "UTUFramework"
-  spec.version      = "0.0.1"
+  spec.pod_target_xcconfig = {'PRODUCT_BUNDLE_IDENTIFIER': 'com.utu.utuframework'}
+  spec.version      = "1.0.0"
   spec.summary      = "A short description of UTUButton."
 
   # This description is used to generate tags and improve search results.
@@ -89,7 +90,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "UTUFramework", "UTUFramework/**/*.{h,m}"
+  spec.source_files  = "UTUFramework", "UTUFramework/Classes/**/*.{swift,h,m}"
   spec.exclude_files = "UTUFramework/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -104,7 +105,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  #spec.resources = "UTUFramework/Noto_Sans/*.ttf"
+  spec.resources = "UTUFramework/Resources/**/*.{png,xib,json,plist,ttf,xcassets,sqlite,bundle,js}"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -129,9 +130,9 @@ Pod::Spec.new do |spec|
   #  you can include multiple dependencies to ensure it works.
 
   # spec.requires_arc = true
-
+  spec.swift_version = "5" 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
-spec.swift_version = "5" 
+    spec.dependency "MaterialComponents"
 
 end
