@@ -17,7 +17,7 @@ Custom components library for all Tax free applications.
 
 Step 1 : Generate a Podfile and add the following line,
 
-    pod "UTUFramework", :git => 'https://github.com/UTU-Global/Mobile.iOS.UI', :branch => 'common_pod'
+    pod "UTUFramework", :git => 'https://github.com/UTU-Global/Mobile.iOS.UI'
 
 Note : As the pod already uses MaterialComponents pods. Please comment the line if already using in  your Podfile.
 
@@ -150,6 +150,7 @@ class ViewController : UIViewController,PickerSelectionDelegate {
   func showActionSheet(){
         let vc = UTUActionSheetVC(nibName: "UTUActionSheetVC", bundle: Bundle(identifier: "com.utu.utuframework"))
         vc.items = [["title":"Take photo","image":"photoCamera"],["title":"Gallery","image":"photoLibrary"]]
+        vc.titleStr = "Title"
         let customVC = CustomModalPresentViewController.init(rootViewController: vc)
         customVC?.partScreenPresentYPos = Float(UIScreen.main.bounds.size.height - 197)
         vc.delegateObj = self
