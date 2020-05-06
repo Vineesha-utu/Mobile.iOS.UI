@@ -1,8 +1,4 @@
 <h1 align="center">Tax free iOS UI Components</h1>
-
-<p align="center">
-  
-</p>
 <p align="center">
   
   <a href="https://cocoapods.org" > <img src="https://raw.githubusercontent.com/CocoaPods/shared_resources/master/assets/cocoapods-banner-readme.png" width=250 height=30/></a>
@@ -181,5 +177,3 @@ class ViewController : UIViewController,PickerSelectionDelegate {
               
 
 ```
-
-
