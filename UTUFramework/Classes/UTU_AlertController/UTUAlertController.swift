@@ -24,10 +24,18 @@ public class UTUAlertController: UIViewController {
     public var tintColor = UIColor(red: 0/255, green: 179/255, blue: 152/255, alpha: 1)
     public var delegate: UTUAlertViewDelegate?
     public var titleStr : String?
+    public var titleTextColor : UIColor?
+    public var okBtnTitleColor : UIColor?
+    public var cancelBtnTitleColor : UIColor?
+    public var okBtnBgColor : UIColor?
+    public var cancelBtnBgColor : UIColor?
+    public var borderColor : UIColor?
+
     public var messageStr : String?
     public var okStr : String?
     public var cancelStr : String?
     public var descHeight = 85
+    public var titleFont : UIFont?
     let alertViewGrayColor = UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1)
 
     override public func viewDidLoad() {
@@ -60,6 +68,28 @@ public class UTUAlertController: UIViewController {
         if let cancel = cancelStr {
             self.cancelBtn.setTitle(cancel, for: .normal)
         }
+        if let tempTitleFont = self.titleFont {
+            self.titleLbl.font = tempTitleFont
+        }
+        if let titleColor = self.titleTextColor {
+            self.titleLbl.textColor = titleColor
+        }
+        if let okBgColor = self.okBtnBgColor {
+            self.okBtn.backgroundColor = okBgColor
+        }
+        if let cancelBgColor = self.cancelBtnBgColor {
+            self.cancelBtn.backgroundColor = cancelBgColor
+        }
+        if let okBgTitleColor = self.okBtnTitleColor {
+            self.okBtn.setTitleColor(okBgTitleColor, for: .normal)
+        }
+        if let cancelBtnTitleColor = self.cancelBtnTitleColor {
+            self.cancelBtn.setTitleColor(cancelBtnTitleColor, for: .normal)
+        }
+        if let tempBorderColor = self.borderColor {
+            okBtn.layer.borderColor = tempBorderColor.cgColor
+            cancelBtn.layer.borderColor = tempBorderColor.cgColor
+        }
     }
     private func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat {
         let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
@@ -78,10 +108,10 @@ public class UTUAlertController: UIViewController {
     override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         view.layoutIfNeeded()
-        cancelBtn.layer.cornerRadius = 5
+        /*cancelBtn.layer.cornerRadius = 5
         okBtn.layer.cornerRadius = 5
         cancelBtn.layer.borderColor = tintColor.cgColor
-        okBtn.layer.borderColor = tintColor.cgColor
+        okBtn.layer.borderColor = tintColor.cgColor*/
         if #available(iOS 11.0, *) {
             cancelBtn.layer.maskedCorners = [.layerMinXMaxYCorner]
             okBtn.layer.maskedCorners = [.layerMaxXMaxYCorner]
