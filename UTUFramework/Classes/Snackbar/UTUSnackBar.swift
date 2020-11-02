@@ -11,7 +11,7 @@ import MaterialComponents
 import TTGSnackbar
 
 public class UTUSnackBar : NSObject { //MDCSnackbarManagerDelegate
-    static var snackbar : TTGSnackbar!
+    public static var snackbar : TTGSnackbar!
     var serviceDictionary : NSDictionary?
     static var snackbarTitle = ""
     static var isSuccess = false
