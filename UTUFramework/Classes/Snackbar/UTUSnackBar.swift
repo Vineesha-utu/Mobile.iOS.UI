@@ -15,14 +15,14 @@ public class UTUSnackBar : NSObject { //MDCSnackbarManagerDelegate
     var serviceDictionary : NSDictionary?
     static var snackbarTitle = ""
     static var isSuccess = false
-    static var customMessageView : UIView!
-    static var moreButton, statusButton : UIButton!
+    var customMessageView : UIView!
+    var moreButton, statusButton : UIButton!
     static let messageAction = MDCSnackbarMessageAction()
     static let snackbarMessage = MDCSnackbarMessage()
     
     static var snackbarTitleLblHeight : CGFloat!
     static var defaultManager : MDCSnackbarManager!
-    static var snackbarTitleLbl : UILabel!
+    var snackbarTitleLbl : UILabel!
     //Singleton Implementation
     private static let sharedInstance:UTUSnackBar = {
         let instance = UTUSnackBar ()
@@ -33,13 +33,12 @@ public class UTUSnackBar : NSObject { //MDCSnackbarManagerDelegate
         self.showSnackbar(title: title, forSuccess: false)
     }
     public static func showSnackbar(title: String, forSuccess : Bool) {
-        snackbarTitleLblHeight = self.heightForView(text: title, font: UIFont(name: UTUFontNames.NotoSansRegular, size: 12)!, width: UIScreen.main.bounds.size.width - 96)
+        let snackbarTitleLblHeight = self.heightForView(text: title, font: UIFont(name: UTUFontNames.NotoSansRegular, size: 12)!, width: UIScreen.main.bounds.size.width - 96)
         if snackbar != nil {
             snackbar.dismiss()
         }
         let snackbarTitle = title
-        snackbar = TTGSnackbar(message: title, duration: .forever)
-        snackbar.frame = CGRect(x: 0, y: 0, width:snackbar.frame.width , height: snackbar.frame.height + 20)
+        snackbar = TTGSnackbar(message: snackbarTitle, duration: .forever)
         snackbar.leftMargin = 10
         snackbar.rightMargin = 10
         snackbar.messageTextFont = UIFont(name: UTUFontNames.NotoSansRegular, size: 12)!
@@ -47,14 +46,14 @@ public class UTUSnackBar : NSObject { //MDCSnackbarManagerDelegate
         snackbar.animationDuration = 0
         snackbar.show()
         //let screenSize = UIScreen.main.bounds
-        customMessageView = UIView(frame: CGRect(x: 0, y: 0, width:snackbar.frame.width , height: snackbar.frame.height + 20))
+        let customMessageView = UIView(frame: CGRect(x: 0, y: 0, width:snackbar.frame.width , height: snackbar.frame.height + 20))
         customMessageView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
         customMessageView.layer.borderWidth = 1.0
         customMessageView.layer.borderColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1).cgColor
         customMessageView.layer.cornerRadius = 3.0
         snackbar.addSubview(customMessageView)
         
-        statusButton = UIButton(frame: CGRect(x: 8, y: (customMessageView.frame.height/2) - 12, width: 24, height: 25))
+        let statusButton = UIButton(frame: CGRect(x: 8, y: (customMessageView.frame.height/2) - 12, width: 24, height: 25))
         let tickImg = UIImage(named: "check_circle", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)
         let infoImg = UIImage(named: "info", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)
         if forSuccess {
@@ -64,7 +63,7 @@ public class UTUSnackBar : NSObject { //MDCSnackbarManagerDelegate
         }
         customMessageView.addSubview(statusButton)
         
-        snackbarTitleLbl = UILabel(frame: CGRect(x: 40, y: 10, width: customMessageView.bounds.size.width - 40 - 10 - 30, height: snackbarTitleLblHeight))
+        let snackbarTitleLbl = UILabel(frame: CGRect(x: 40, y: 10, width: customMessageView.bounds.size.width - 40 - 10 - 30, height: snackbarTitleLblHeight))
         snackbarTitleLbl.text = snackbarTitle
         snackbarTitleLbl.textAlignment = NSTextAlignment.left
         snackbarTitleLbl.numberOfLines = 0
@@ -72,55 +71,35 @@ public class UTUSnackBar : NSObject { //MDCSnackbarManagerDelegate
         snackbarTitleLbl.font = UIFont(name: UTUFontNames.NotoSansRegular, size: 12)
         customMessageView.addSubview(snackbarTitleLbl)
         
-        moreButton = UIButton(frame: CGRect(x: customMessageView.frame.width - 30, y: (customMessageView.frame.height/2) - 12, width: 24, height: 25))
-        moreButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
+        let moreButton = UIButton(frame: CGRect(x: customMessageView.frame.width - 30, y: (customMessageView.frame.height/2) - 12, width: 24, height: 25))
+        let moreImg = UIImage(named: "cancel-24px", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)
+        moreButton.setImage(moreImg, for: .normal)
         customMessageView.addSubview(moreButton)
         
-        if forSuccess {
-            statusButton.setBackgroundImage(tickImg, for: .normal)
-            moreButton.setImage(UIImage(named: "close24Px", in:nil , compatibleWith: nil)?.setImageColor(.green), for: .normal)
-            //Bundle(identifier: "com.utu.utuframework")
-        } else {
-            statusButton.setBackgroundImage(infoImg, for: .normal)
-            moreButton.setImage(UIImage(named: "close24Px", in: nil, compatibleWith: nil)?.setImageColor(UIColor(red: 210/255, green: 75/255, blue: 59/255, alpha: 1)), for: .normal)//Bundle(identifier: "com.utu.utuframework")
-        }
-        moreButton.isUserInteractionEnabled = true
-        statusButton.isUserInteractionEnabled = false
-        snackbarTitleLbl.isUserInteractionEnabled = false
-        customMessageView.isUserInteractionEnabled = true
-
         let count = snackbarTitleLblHeight/15
-        if count >= 4 {
-            snackbarTitleLbl.isUserInteractionEnabled = true
+        if count > 4 {
             customMessageView.frame = CGRect(x: 0, y: 0, width: customMessageView.frame.width, height: 85)
-            snackbar.frame = CGRect(x: 0, y: 0, width: customMessageView.frame.width, height: 85)
-        } else if count >= 3 {
+        } else if count > 3 {
             customMessageView.frame = CGRect(x: 0, y: 0, width: customMessageView.frame.width, height: 65)
-            snackbar.frame = CGRect(x: 0, y: 0, width: customMessageView.frame.width, height: 65)
         } else {
             customMessageView.frame = CGRect(x: 0, y: 0, width: customMessageView.frame.width, height: 45)
-            snackbar.frame = CGRect(x: 0, y: 0, width: customMessageView.frame.width, height: 45)
         }
         snackbarTitleLbl.frame = CGRect(x: 40, y: 5, width: customMessageView.bounds.size.width - 40 - 40, height: customMessageView.frame.height - 10)
         statusButton.frame = CGRect(x: 8, y: (customMessageView.frame.height/2) - 12, width: 24, height: 25)
         moreButton.frame = CGRect(x: customMessageView.frame.width - 30, y: (customMessageView.frame.height/2) - 12, width: 24, height: 25)
         snackbarTitleLbl.numberOfLines = 4
         
+        moreButton.isUserInteractionEnabled = false
+        statusButton.isUserInteractionEnabled = false
+        snackbarTitleLbl.isUserInteractionEnabled = false
+        customMessageView.isUserInteractionEnabled = true
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(moreAction))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(closeAction(sender:)))
         tapGestureRecognizer.numberOfTouchesRequired = 1
-        snackbarTitleLbl.addGestureRecognizer(tapGestureRecognizer)
+        customMessageView.addGestureRecognizer(tapGestureRecognizer)
     }
-    @objc static func closeAction() {
+    @objc static func closeAction(sender:UITapGestureRecognizer) {
         UTUSnackBar.snackbar.dismiss()
-    }
-    @objc static func moreAction() {
-        customMessageView.frame = CGRect(x: 0, y: 0, width: customMessageView.frame.width, height:snackbarTitleLblHeight + 20)
-        moreButton.frame = CGRect(x: customMessageView.frame.width - 30, y: (customMessageView.frame.height/2) - 12, width: 24, height: 25)
-        snackbarTitleLbl.frame = CGRect(x: 40, y: 5, width: customMessageView.bounds.size.width - 40 - 40, height:customMessageView.frame.height - 10)
-        statusButton.frame = CGRect(x: 8, y: (customMessageView.frame.height/2) - 12, width: 24, height: 25)
-        snackbarTitleLbl.numberOfLines = 0
-        moreButton.isUserInteractionEnabled = true
     }
     static func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat {
         let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
@@ -131,7 +110,6 @@ public class UTUSnackBar : NSObject { //MDCSnackbarManagerDelegate
         label.sizeToFit()
         return label.frame.height
     }
-    
     /*public static func showSnackbarOld(title: String, forSuccess : Bool) {
         let actionHandler = {() in
             //todo
@@ -303,17 +281,3 @@ public class UTUSnackBar : NSObject { //MDCSnackbarManagerDelegate
     }
 }
 */
-extension UIImage {
-    func setImageColor(_ color: UIColor) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        guard let ctx = UIGraphicsGetCurrentContext(), let cgImage = cgImage else { return self }
-        color.setFill()
-        ctx.translateBy(x: 0, y: size.height)
-        ctx.scaleBy(x: 1.0, y: -1.0)
-        ctx.clip(to: CGRect(x: 0, y: 0, width: size.width, height: size.height), mask: cgImage)
-        ctx.fill(CGRect(x: 0, y: 0, width: size.width, height: size.height))
-        guard let colored = UIGraphicsGetImageFromCurrentImageContext() else { return self }
-        UIGraphicsEndImageContext()
-        return colored
-    }
-}
