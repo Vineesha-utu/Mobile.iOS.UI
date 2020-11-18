@@ -56,9 +56,14 @@ public class UTUAlertController: UIViewController {
             self.titleLbl.text = titleString
         }
         if let message = messageStr {
-            self.messageLbl.text = message
             let messageHeight = heightForView(text: message, font: UIFont(name: "NotoSans", size: 14)!, width: UIScreen.main.bounds.width - 82)
-            self.alertViewHeight.constant = messageHeight + 150
+            self.messageLbl.text = message
+            if titleStr == nil || titleStr!.isEmpty {
+                self.messageToTop.constant = 20
+                self.alertViewHeight.constant = messageHeight + 80
+            } else {
+                self.alertViewHeight.constant = messageHeight + 150
+            }
             self.messageHeight.constant = CGFloat(messageHeight)
         }
 
