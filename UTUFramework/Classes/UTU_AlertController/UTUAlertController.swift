@@ -25,6 +25,8 @@ public class UTUAlertController: UIViewController {
     public var delegate: UTUAlertViewDelegate?
     public var titleStr : String?
     public var titleTextColor : UIColor?
+    public var messageTextColor : UIColor?
+
     public var okBtnTitleColor : UIColor?
     public var cancelBtnTitleColor : UIColor?
     public var okBtnBgColor : UIColor?
@@ -97,6 +99,9 @@ public class UTUAlertController: UIViewController {
         }
         if let status = isCancelButtonHidden {
             cancelBtn.isHidden = status
+        }
+        if let messageTextColor = self.messageTextColor {
+            self.messageLbl.textColor = messageTextColor
         }
     }
     private func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat {
