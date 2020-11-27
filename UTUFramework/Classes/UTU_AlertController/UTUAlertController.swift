@@ -34,6 +34,8 @@ public class UTUAlertController: UIViewController {
     public var messageStr : String?
     public var okStr : String?
     public var cancelStr : String?
+    public var isOkButtonHidden : Bool?
+    public var isCancelButtonHidden : Bool?
     public var descHeight = 85
     public var titleFont : UIFont?
     let alertViewGrayColor = UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1)
@@ -89,6 +91,12 @@ public class UTUAlertController: UIViewController {
         if let tempBorderColor = self.borderColor {
             okBtn.layer.borderColor = tempBorderColor.cgColor
             cancelBtn.layer.borderColor = tempBorderColor.cgColor
+        }
+        if let status = isOkButtonHidden {
+            okBtn.isHidden = status
+        }
+        if let status = isCancelButtonHidden {
+            cancelBtn.isHidden = status
         }
     }
     private func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat {
