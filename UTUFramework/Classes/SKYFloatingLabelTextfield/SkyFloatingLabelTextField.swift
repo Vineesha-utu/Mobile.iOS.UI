@@ -31,7 +31,7 @@ public class UTUTextField : SkyFloatingLabelTextField{
 
 
 open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swiftlint:disable:this type_body_length
-    
+        
     let paddingEditing = UIEdgeInsets(top: 5, left: 16, bottom: 5, right: 50)
     var clearBtn : UIButton!
     public var isPasswordViewEnable : Bool = false
@@ -94,6 +94,19 @@ open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swif
     @IBInspectable dynamic open var placeholderColor: UIColor = UIColor.lightGray {
         didSet {
             updatePlaceholder()
+        }
+    }
+    /// A UIColor value that determines text color of the placeholder label
+    @IBInspectable dynamic open var floatingTextBgColor: UIColor  = UIColor.white {
+        didSet {
+            self.titleLabel.backgroundColor = floatingTextBgColor
+            self.titleLabel.layer.borderColor = floatingTextBgColor.cgColor
+            self.titleLabel.layer.shadowColor = floatingTextBgColor.cgColor
+        }
+    }
+    @IBInspectable dynamic open var borderColor: UIColor  = UTUColors.borderColor {
+        didSet {
+            borderLayer.strokeColor = borderColor.cgColor
         }
     }
     
@@ -825,18 +838,17 @@ open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swif
      */
     func titleLabelRectForBounds(_ bounds: CGRect, editing: Bool) -> CGRect {
         if editing {
-            
             if isPasswordViewEnable{
                 self.clearBtn.isHidden = true
             }else{
                 self.clearBtn.isHidden = false
             }
-//            drawColored()
-            self.titleLabel.backgroundColor = UIColor.white
-            self.titleLabel.layer.borderColor = UIColor.white.cgColor
+            //            drawColored()
+            self.titleLabel.backgroundColor = floatingTextBgColor
+            self.titleLabel.layer.borderColor = floatingTextBgColor.cgColor
+            self.titleLabel.layer.shadowColor = floatingTextBgColor.cgColor
             self.titleLabel.layer.borderWidth = 2
             self.titleLabel.layer.masksToBounds = false
-            self.titleLabel.layer.shadowColor = UIColor.white.cgColor
             self.titleLabel.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
             self.titleLabel.layer.shadowOpacity = 1.0
             self.titleLabel.layer.shadowRadius = 1.0
@@ -1002,7 +1014,7 @@ open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swif
         borderLayer.path = path.cgPath // Reuse the Bezier path
         borderLayer.frame = self.bounds
         borderLayer.fillColor = UIColor.clear.cgColor
-        borderLayer.strokeColor = UTUColors.borderColor.cgColor
+        borderLayer.strokeColor = borderColor.cgColor
         borderLayer.lineWidth = 1
         borderLayer.frame = self.bounds
         borderLayer.masksToBounds = false
@@ -1023,20 +1035,18 @@ open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swif
                path = UIBezierPath(roundedRect: lineFrame,
                                    byRoundingCorners: [.topLeft, .topRight,.bottomLeft, .bottomRight],
                                    cornerRadii: CGSize(width: 4, height: 4))
-        if self.text!.count > 0{
-            self.titleLabel.backgroundColor = UIColor.white
-            self.titleLabel.layer.borderColor = UIColor.white.cgColor
+        if self.text!.count > 0 {
+            self.titleLabel.backgroundColor = floatingTextBgColor
+            self.titleLabel.layer.borderColor = floatingTextBgColor.cgColor
+            self.titleLabel.layer.shadowColor = floatingTextBgColor.cgColor
             self.titleLabel.layer.borderWidth = 2
             self.titleLabel.layer.masksToBounds = false
-            self.titleLabel.layer.shadowColor = UIColor.white.cgColor
             self.titleLabel.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
             self.titleLabel.layer.shadowOpacity = 1.0
             self.titleLabel.layer.shadowRadius = 1.0
             self.bringSubviewToFront(self.titleLabel)
-            
             return
-        }
-        else if self.text!.count == 0{
+        } else if self.text!.count == 0 {
             if !isHighlighted && !editingOrSelected{
                 _ = titleLabelRectForBounds(frame, editing: false)
 //                self.layoutSubviews()
@@ -1048,7 +1058,7 @@ open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swif
         borderLayer.path = path.cgPath // Reuse the Bezier path
         borderLayer.frame = self.bounds
         borderLayer.fillColor = UIColor.clear.cgColor
-        borderLayer.strokeColor = UTUColors.borderColor.cgColor
+        borderLayer.strokeColor = borderColor.cgColor
         borderLayer.lineWidth = 1
         borderLayer.frame = self.bounds
         borderLayer.masksToBounds = false
