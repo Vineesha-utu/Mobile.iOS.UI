@@ -37,7 +37,7 @@ public class UTUAlertController: UIViewController {
     public var descHeight = 85
     public var titleFont : UIFont?
     let alertViewGrayColor = UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1)
-
+    public var alertViewBgColor: UIColor?
     override public func viewDidLoad() {
         super.viewDidLoad()
         okBtn.layer.cornerRadius = 3.0
@@ -94,6 +94,9 @@ public class UTUAlertController: UIViewController {
         if let tempBorderColor = self.borderColor {
             okBtn.layer.borderColor = tempBorderColor.cgColor
             cancelBtn.layer.borderColor = tempBorderColor.cgColor
+        }
+        if let alertBgColor = self.alertViewBgColor {
+            self.alertView.backgroundColor = alertBgColor
         }
     }
     private func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat {

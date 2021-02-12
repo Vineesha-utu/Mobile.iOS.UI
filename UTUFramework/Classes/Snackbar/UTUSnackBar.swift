@@ -31,7 +31,7 @@ public class UTUSnackBar : NSObject { //MDCSnackbarManagerDelegate
     public static func showSnackbar(title: String){
         self.showSnackbar(title: title, forSuccess: false)
     }
-    public static func showSnackbar(title: String, forSuccess : Bool) {
+    public static func showSnackbar(title: String, forSuccess : Bool, bgColor: UIColor? = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1), titleColor: UIColor? = .black, borderColor:UIColor? = UIColor(red: 213/255, green: 213/255, blue: 213/255, alpha: 1)) {
         snackbarTitleLblHeight = self.heightForView(text: title, font: UIFont(name: UTUFontNames.NotoSansRegular, size: 12)!, width: UIScreen.main.bounds.size.width - 96)
         if snackbar != nil {
             snackbar.dismiss()
@@ -47,9 +47,9 @@ public class UTUSnackBar : NSObject { //MDCSnackbarManagerDelegate
         snackbar.show()
         //let screenSize = UIScreen.main.bounds
         customMessageView = UIView(frame: CGRect(x: 0, y: 0, width:snackbar.frame.width , height: snackbar.frame.height + 20))
-        customMessageView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
+        customMessageView.backgroundColor = bgColor
         customMessageView.layer.borderWidth = 1.0
-        customMessageView.layer.borderColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1).cgColor
+        customMessageView.layer.borderColor = borderColor!.cgColor
         customMessageView.layer.cornerRadius = 3.0
         snackbar.addSubview(customMessageView)
         
@@ -67,7 +67,7 @@ public class UTUSnackBar : NSObject { //MDCSnackbarManagerDelegate
         snackbarTitleLbl.text = snackbarTitle
         snackbarTitleLbl.textAlignment = NSTextAlignment.left
         snackbarTitleLbl.numberOfLines = 0
-        snackbarTitleLbl.textColor = .black
+        snackbarTitleLbl.textColor = titleColor
         snackbarTitleLbl.font = UIFont(name: UTUFontNames.NotoSansRegular, size: 12)
         customMessageView.addSubview(snackbarTitleLbl)
         
