@@ -38,6 +38,11 @@ public class UTUSnackBar : NSObject { //MDCSnackbarManagerDelegate
         }
         let snackbarTitle = title
         snackbar = TTGSnackbar(message: title, duration: .forever)
+        snackbar.layer.shadowOpacity = 0
+        snackbar.layer.shadowRadius = 0
+        snackbar.layer.shadowColor = borderColor?.cgColor
+        snackbar.layer.shadowOffset = CGSize(width: 0, height: 0)
+        snackbar.backgroundColor = bgColor
         snackbar.frame = CGRect(x: 0, y: 0, width:snackbar.frame.width , height: snackbar.frame.height + 20)
         snackbar.leftMargin = 10
         snackbar.rightMargin = 10
