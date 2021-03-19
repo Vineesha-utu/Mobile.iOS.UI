@@ -140,23 +140,11 @@ public class UTUAlertController: UIViewController {
     }
     
     @IBAction func onTapCancelButton(_ sender: UIButton) {
-        okBtn.backgroundColor = .white
-        okBtn.layer.borderColor = tintColor.cgColor
-        okBtn.setTitleColor(tintColor, for: .normal)
-        sender.backgroundColor = tintColor
-        sender.setTitleColor(.white, for: .normal)
         delegate?.cancelButtonTapped()
-       // self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onTapOkButton(_ sender: UIButton) {
-        cancelBtn.backgroundColor = .white
-        cancelBtn.layer.borderColor = tintColor.cgColor
-        cancelBtn.setTitleColor(tintColor, for: .normal)
-        sender.setTitleColor(.white, for: .normal)
-        sender.backgroundColor = tintColor
         delegate?.okButtonTapped()
-        //self.dismiss(animated: true, completion: nil)
     }
  
 }
