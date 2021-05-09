@@ -1027,7 +1027,7 @@ public class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{
             self.titleLabel.layer.shadowRadius = 1.0
             self.bringSubviewToFront(self.titleLabel)
             
-            return
+           // return
         }
         else if self.text!.count == 0{
             if !isHighlighted && !editingOrSelected{
