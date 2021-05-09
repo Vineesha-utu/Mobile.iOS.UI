@@ -1045,7 +1045,7 @@ open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swif
             self.titleLabel.layer.shadowOpacity = 1.0
             self.titleLabel.layer.shadowRadius = 1.0
             self.bringSubviewToFront(self.titleLabel)
-            return
+           // return
         } else if self.text!.count == 0 {
             if !isHighlighted && !editingOrSelected{
                 _ = titleLabelRectForBounds(frame, editing: false)
