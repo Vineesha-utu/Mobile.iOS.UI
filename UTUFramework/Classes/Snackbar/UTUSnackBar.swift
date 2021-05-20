@@ -82,7 +82,7 @@ public class UTUSnackBar : NSObject { //MDCSnackbarManagerDelegate
         
         if forSuccess {
             statusButton.setBackgroundImage(tickImg, for: .normal)
-            moreButton.setImage(UIImage(named: "close24Px", in:Bundle(identifier: "com.utu.utuframework") , compatibleWith: nil)?.setImageColor(.green), for: .normal)
+            moreButton.setImage(UIImage(named: "close24Px", in:Bundle(identifier: "com.utu.utuframework") , compatibleWith: nil)?.setImageColor(UTUColors.appColor), for: .normal)
         } else {
             statusButton.setBackgroundImage(infoImg, for: .normal)
             moreButton.setImage(UIImage(named: "close24Px", in: Bundle(identifier: "com.utu.utuframework"), compatibleWith: nil)?.setImageColor(UIColor(red: 210/255, green: 75/255, blue: 59/255, alpha: 1)), for: .normal)
