@@ -32,7 +32,7 @@ public class UTUSnackBar : NSObject { //MDCSnackbarManagerDelegate
         self.showSnackbar(title: title, forSuccess: false)
     }
     public static func showSnackbar(title: String, forSuccess : Bool, bgColor: UIColor? = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1), titleColor: UIColor? = .black, borderColor:UIColor? = UIColor(red: 213/255, green: 213/255, blue: 213/255, alpha: 1)) {
-        snackbarTitleLblHeight = self.heightForView(text: title, font: UIFont(name: UTUFontNames.NotoSansRegular, size: 12)!, width: UIScreen.main.bounds.size.width - 96)
+        snackbarTitleLblHeight = self.heightForView(text: title, font: UIFont(name: UTUFontNames.NotoSansRegular, size: 12)!, width: UIScreen.main.bounds.size.width - 100)
         if snackbar != nil {
             snackbar.dismiss()
         }
