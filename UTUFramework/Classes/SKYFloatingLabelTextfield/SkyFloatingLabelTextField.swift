@@ -40,6 +40,9 @@ open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swif
     let borderLayer = CAShapeLayer()
     var path = UIBezierPath()
     var isCancelhidden = false
+    public var isNonActionButtons : Bool = false
+
+
     /**
      A Boolean value that determines if the language displayed is LTR.
      Default value set automatically from the application language settings.
@@ -1064,6 +1067,13 @@ open class SkyFloatingLabelTextField: UITextField , UITextFieldDelegate{ // swif
         borderLayer.masksToBounds = false
         self.layer.addSublayer(borderLayer)
     }
+ open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        if isNonActionButtons {
+            return false
+        }else{
+            return super.canPerformAction(action, withSender: sender)
+        }
+    }
     
 //    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
 //
